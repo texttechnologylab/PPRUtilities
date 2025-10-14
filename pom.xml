@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.texttechnologylab.utilities</groupId>
+    <artifactId>PPRUtilities</artifactId>
+    <version>1.0</version>
+
+    <description></description>
+
+    <licenses>
+        <license>
+            <name>AGPL-3.0-or-later</name>
+            <url>https://www.gnu.org/licenses/agpl.txt</url>
+            <distribution>repo</distribution>
+            <comments>GNU Affero General Public License v3.0 or later</comments>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Texttechnology Lab</name>
+        <url>https://www.texttechnologylab.org</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>mehler</id>
+            <name>Prof. Dr. Alexander Mehler</name>
+            <email>mehler@em.uni-frankfurt.de</email>
+            <url>https://www.texttechnologylab.org/team/alexander-abrami/</url>
+            <organization>Goethe University Frankfurt / Texttechnology Lab</organization>
+            <organizationUrl>https://www.texttechnologylab.org</organizationUrl>
+            <roles>
+                <role>head of department</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>abrami</id>
+            <name>Giuseppe Abrami</name>
+            <email>abrami@em.uni-frankfurt.de</email>
+            <url>https://www.texttechnologylab.org/team/giuseppe-abrami/</url>
+            <organization>Goethe University Frankfurt / Texttechnology Lab</organization>
+            <organizationUrl>https://www.texttechnologylab.org</organizationUrl>
+            <roles>
+                <role>lead developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+    </developers>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <version.json>20250517</version.json>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${version.json}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.thedeanda/lorem -->
+        <dependency>
+            <groupId>com.thedeanda</groupId>
+            <artifactId>lorem</artifactId>
+            <version>2.2</version>
+        </dependency>
+    </dependencies>
+
+</project>
