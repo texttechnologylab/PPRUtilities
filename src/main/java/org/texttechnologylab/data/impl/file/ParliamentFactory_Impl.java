@@ -31,7 +31,7 @@ public class ParliamentFactory_Impl implements ParliamentFactory {
     private MongoDBConnectionHandler dbConnectionHandler = null;
 
     public ParliamentFactory_Impl() throws IOException {
-        String dbDefaultPath = ParliamentFactory_Impl.class.getClassLoader().getResource("db_connection_ro").getPath();
+        String dbDefaultPath = ParliamentFactory_Impl.class.getResource("/db_connection_ro").getPath();
         MongoDBConfig dbConfig = new MongoDBConfig(dbDefaultPath);
         this.createDatabaseConnection(dbConfig);
     }
