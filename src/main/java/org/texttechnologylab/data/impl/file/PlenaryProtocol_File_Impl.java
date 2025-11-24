@@ -1,7 +1,7 @@
 package org.texttechnologylab.data.impl.file;
 
-import org.neo4j.internal.batchimport.input.InputException;
 import org.texttechnologylab.data.*;
+import org.texttechnologylab.exception.InputException;
 import org.texttechnologylab.utilities.StringHelper;
 import org.texttechnologylab.utilities.XMLHelper;
 import org.w3c.dom.Document;
