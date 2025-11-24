@@ -9,7 +9,6 @@ import com.mongodb.client.model.Sorts;
 import org.bson.BsonDocument;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.texttechnologylab.SpeechPortfolio;
 import org.texttechnologylab.data.*;
 import org.texttechnologylab.data.impl.mongodb.*;
 import org.texttechnologylab.database.MongoDBConfig;
@@ -32,7 +31,7 @@ public class ParliamentFactory_Impl implements ParliamentFactory {
     private MongoDBConnectionHandler dbConnectionHandler = null;
 
     public ParliamentFactory_Impl() throws IOException {
-        String dbDefaultPath = SpeechPortfolio.class.getClassLoader().getResource("db_connection_ro").getPath();
+        String dbDefaultPath = ParliamentFactory_Impl.class.getClassLoader().getResource("db_connection_ro").getPath();
         MongoDBConfig dbConfig = new MongoDBConfig(dbDefaultPath);
         this.createDatabaseConnection(dbConfig);
     }
