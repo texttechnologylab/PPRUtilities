@@ -1,6 +1,6 @@
 package org.texttechnologylab.data;
 
-import org.neo4j.internal.batchimport.input.InputException;
+import org.texttechnologylab.exception.InputException;
 
 import java.sql.Date;
 import java.sql.Time;
