@@ -32,6 +32,18 @@ public class MongoDBConfig extends Properties {
     }
 
     /**
+     * Constructor with the path of the Config-File
+     * @param in
+     * @throws IOException
+     */
+
+    public MongoDBConfig(InputStream in) throws IOException {
+        BufferedReader lReader = new BufferedReader(new InputStreamReader(in));
+        this.load(lReader);
+        lReader.close();
+    }
+
+    /**
      * Method for the Hostname
      * @return
      */
