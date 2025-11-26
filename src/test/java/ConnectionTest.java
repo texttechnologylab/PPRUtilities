@@ -14,6 +14,13 @@ public class ConnectionTest {
 
         ParliamentFactory parliamentFactory = new ParliamentFactory_Impl();
 
+        parliamentFactory.getProtocol(106).getAgendaItems().stream().forEach(ai->{
+            System.out.println(ai.getIndex());
+            ai.getSpeeches().stream().forEach(spee->{
+                System.out.println(spee.getText().substring(0, 100));
+            });
+        });
+
         List<Speech> pSpeechs = parliamentFactory.fullTextSearch("Europa");
         for (Speaker speaker : parliamentFactory.getProtocol(106).getSpeakers()) {
             System.out.println(speaker);

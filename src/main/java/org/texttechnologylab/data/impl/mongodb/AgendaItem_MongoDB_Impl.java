@@ -15,6 +15,7 @@ public class AgendaItem_MongoDB_Impl extends AgendaItem_File_Impl implements Age
     public AgendaItem_MongoDB_Impl(PlenaryProtocol pProtocol, Document pDocument) {
         super(pProtocol.getFactory());
         this.pDocument = pDocument;
+        this.pProtocol = pProtocol;
     }
 
     @Override

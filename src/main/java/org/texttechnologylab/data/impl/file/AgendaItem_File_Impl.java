@@ -20,7 +20,7 @@ import java.util.Set;
 public class AgendaItem_File_Impl extends PlenaryObject_File_Impl implements AgendaItem {
 
     // Declaration of variables for a protocol
-    private PlenaryProtocol pProtocol = null;
+    protected PlenaryProtocol pProtocol = null;
     private String sIndex = "";
     private String sTitle = "";
     private List<Speech> pSpeeches = new ArrayList<>(0);
