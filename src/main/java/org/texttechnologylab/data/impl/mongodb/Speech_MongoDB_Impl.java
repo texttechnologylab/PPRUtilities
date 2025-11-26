@@ -1,11 +1,13 @@
 package org.texttechnologylab.data.impl.mongodb;
 
+import com.mongodb.BasicDBObject;
 import org.bson.Document;
 import org.texttechnologylab.data.*;
 import org.texttechnologylab.data.impl.file.Speech_File_Impl;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Speech_MongoDB_Impl extends Speech_File_Impl implements Speech {
@@ -78,7 +80,19 @@ public class Speech_MongoDB_Impl extends Speech_File_Impl implements Speech {
 
         this.pDocument.getList("comments", String.class);
 
+        Iterator<Document> dIterator = this.getFactory().getMongoConnection().doQueryIterator(BasicDBObject.parse("{ \"_id\": \""+this.getID()+"\"}"), "speech");
 
+        dIterator.forEachRemaining(d->{
+
+            List<Document> dList = d.getList("texts", Document.class);
+
+            dList.forEach(doc->{
+                if(doc.getString("type").equalsIgnoreCase("comment")){
+                    rList.add(new Comment_MongoDB_Impl(this.getFactory(), this.getSpeaker(), this, doc.getString("content")));
+                }
+            });
+
+        });
 
         return rList;
     }

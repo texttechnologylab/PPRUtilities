@@ -17,6 +17,10 @@ public class ConnectionTest {
         parliamentFactory.getProtocol(106).getAgendaItems().stream().forEach(ai->{
             System.out.println(ai.getIndex());
             ai.getSpeeches().stream().forEach(spee->{
+                System.out.println(spee.getSpeaker());
+                System.out.println(spee.getComments().size());
+                System.out.println(spee.getTexts().size());
+
                 System.out.println(spee.getText().substring(0, 100));
             });
         });
