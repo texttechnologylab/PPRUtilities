@@ -28,7 +28,7 @@ public class Comment_MongoDB_Impl extends Text_MongoDB_Impl implements Comment {
 
     @Override
     public Speech getSpeech() {
-        if(pDocument.containsKey("speach")){
+        if(pDocument.containsKey("speech")){
             pDocument.put("speech", pDocument.getString("speach"));
         }
         return this.getFactory().getSpeech(pDocument.getString("speech"));

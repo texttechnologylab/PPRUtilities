@@ -356,7 +356,7 @@ public class ParliamentFactory_Impl implements ParliamentFactory {
             BasicDBObject query = new BasicDBObject();
             query.put("speaker", pSpeaker.getID());
 
-            MongoCursor<Document> rResult = this.dbConnectionHandler.doQueryIterator(query, "speeches");
+            MongoCursor<Document> rResult = this.dbConnectionHandler.doQueryIterator(query, "speech");
 
             rResult.forEachRemaining(d->{
                 rList.add(new Speech_MongoDB_Impl(this, d));

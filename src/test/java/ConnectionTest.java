@@ -20,6 +20,15 @@ public class ConnectionTest {
         }
         System.out.println(pSpeechs.size());
 
+        System.out.println(parliamentFactory.getSpeakers().size());
+
+        for (Speaker speaker : parliamentFactory.getSpeakers()) {
+            System.out.println(speaker);
+            System.out.println(speaker.getSpeeches().size());
+        }
+        System.out.println(parliamentFactory.getFractions().size());
+        System.out.println(parliamentFactory.getComments().size());
+
     }
 
 }
