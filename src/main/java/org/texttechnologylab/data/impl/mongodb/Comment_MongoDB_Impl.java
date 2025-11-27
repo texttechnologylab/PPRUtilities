@@ -18,20 +18,30 @@ public class Comment_MongoDB_Impl extends Text_MongoDB_Impl implements Comment {
 
     @Override
     public String getContent() {
+        if(pDocument == null) {
+            return super.getContent();
+        }
         return pDocument.getString("text");
     }
 
     @Override
     public Speaker getSpeaker() {
+        if(pDocument == null) {
+            return super.getSpeaker();
+        }
         return this.getFactory().getSpeaker(pDocument.getString("speaker"));
     }
 
     @Override
     public Speech getSpeech() {
-        if(pDocument.containsKey("speech")){
-            pDocument.put("speech", pDocument.getString("speach"));
+        if(pDocument!=null){
+            if(pDocument.containsKey("speech")){
+                pDocument.put("speech", pDocument.getString("speech"));
+            }
+            return this.getFactory().getSpeech(pDocument.getString("speech"));
         }
-        return this.getFactory().getSpeech(pDocument.getString("speech"));
+        return super.getSpeech();
+
     }
 
 

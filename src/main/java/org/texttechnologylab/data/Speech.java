@@ -66,4 +66,6 @@ public interface Speech extends PlenaryObject {
      */
     void addText(Text pText);
 
+
+
 }

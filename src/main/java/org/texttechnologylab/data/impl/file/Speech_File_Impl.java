@@ -223,7 +223,7 @@ public class Speech_File_Impl extends PlenaryObject_File_Impl implements Speech 
 
     @Override
     public String toString() {
-        return pAgenda.toString();
+        return this.getID()+"\t"+this.getSpeaker().toString();
     }
 
 }

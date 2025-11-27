@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import org.texttechnologylab.data.Comment;
 import org.texttechnologylab.data.ParliamentFactory;
 import org.texttechnologylab.data.Speaker;
 import org.texttechnologylab.data.Speech;
@@ -13,6 +14,29 @@ public class ConnectionTest {
     public void test() throws IOException {
 
         ParliamentFactory parliamentFactory = new ParliamentFactory_Impl();
+
+        Speech pTest = parliamentFactory.getComments().getFirst().getSpeech();
+        System.out.println(pTest.getID());
+        System.out.println(pTest.getSpeaker());
+        System.out.println(pTest.getLength());
+        System.out.println(pTest.getTexts());
+
+        Comment pComment = parliamentFactory.getComments().getFirst();
+        System.out.println(pComment.getSpeaker());
+        System.out.println(pComment.getSpeech());
+        System.out.println(pComment.getID());
+
+        pTest.getTexts().stream().forEach(t->{
+            if(t instanceof Comment)
+                System.out.println("\t\tC: "+t.getContent());
+            else
+                System.out.println(t.getContent());
+
+        });
+
+//        List<Comment> comments = parliamentFactory.getComments().stream().filter(s ->
+//                s.getSpeech().getID().equals(parliamentFactory.getComments().getFirst().getSpeech().getID())).toList();
+//        System.out.println(comments);
 
         parliamentFactory.getProtocol(106).getAgendaItems().stream().forEach(ai->{
             System.out.println(ai.getIndex());

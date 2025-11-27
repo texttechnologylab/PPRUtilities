@@ -12,9 +12,9 @@ import org.texttechnologylab.data.Text;
  */
 public class Text_File_Impl extends PlenaryObject_File_Impl implements Text {
 
-    private Speaker pSpeaker = null;
-    private Speech pSpeech = null;
-    private String sText = "";
+    protected Speaker pSpeaker = null;
+    protected Speech pSpeech = null;
+    protected String sText = "";
 
     public Text_File_Impl(ParliamentFactory pFactory){
         super(pFactory);

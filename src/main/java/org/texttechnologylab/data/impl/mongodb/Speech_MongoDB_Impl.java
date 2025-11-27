@@ -115,4 +115,8 @@ public class Speech_MongoDB_Impl extends Speech_File_Impl implements Speech {
         return new AgendaItem_MongoDB_Impl(getProtocol(), pDocument.get("agenda", Document.class));
     }
 
+    @Override
+    public String toString() {
+        return this.getAgendaItem()+"\t"+this.getID()+"\t"+this.getSpeaker();
+    }
 }
