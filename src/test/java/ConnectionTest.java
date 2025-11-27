@@ -15,11 +15,31 @@ public class ConnectionTest {
 
         ParliamentFactory parliamentFactory = new ParliamentFactory_Impl();
 
+        parliamentFactory.getFractions().forEach(f->{
+            System.out.println(f.getName());
+            f.getMembers().stream().forEach(m->{
+                System.out.println(m);
+            });
+        });
+
+
+
         Speech pTest = parliamentFactory.getComments().getFirst().getSpeech();
         System.out.println(pTest.getID());
         System.out.println(pTest.getSpeaker());
         System.out.println(pTest.getLength());
         System.out.println(pTest.getTexts());
+
+        parliamentFactory.getSpeeches(pTest.getSpeaker()).stream().forEach(s->{
+            System.out.println(s.getAgendaItem());
+            System.out.println(s.getProtocol());
+        });
+
+        parliamentFactory.getSpeakers().stream().limit(5).forEach(s->{
+            System.out.println(s);
+        });
+
+        parliamentFactory.getComments(pTest.getSpeaker());
 
         Comment pComment = parliamentFactory.getComments().getFirst();
         System.out.println(pComment.getSpeaker());

@@ -299,7 +299,7 @@ public class ParliamentFactory_Impl implements ParliamentFactory {
     public Set<Speaker> getMembers(Fraction pFraction){
         Set<Speaker> rSet = new HashSet<>(0);
 
-        Iterator<Document> dIterator = this.dbConnectionHandler.doQueryIterator(BasicDBObject.parse("{ \"fraction\": \""+pFraction.getName()+"\""), "speaker");
+        Iterator<Document> dIterator = this.dbConnectionHandler.doQueryIterator(BasicDBObject.parse("{ \"fraction\": \""+pFraction.getName()+"\"}"), "speaker");
         dIterator.forEachRemaining(d->{
             rSet.add(new Speaker_MongoDB_Impl(this, d));
         });
