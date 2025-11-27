@@ -123,6 +123,7 @@ public interface ParliamentFactory {
      * @param pParty
      * @return
      */
+    @Deprecated
     Set<Speaker> getMembers(Party pParty);
 
     /**

@@ -283,11 +283,12 @@ public class ParliamentFactory_Impl implements ParliamentFactory {
         this.dbConnectionHandler.insertSpeaker(pSpeaker);
     }
 
+    @Deprecated
     @Override
     public Set<Speaker> getMembers(Party pParty){
         Set<Speaker> rSet = new HashSet<>(0);
 
-        Iterator<Document> dIterator = this.dbConnectionHandler.doQueryIterator(BasicDBObject.parse("{ \"party\": \""+pParty.getName()+"\""), "speaker");
+        Iterator<Document> dIterator = this.dbConnectionHandler.doQueryIterator(BasicDBObject.parse("{ \"party\": \""+pParty.getName()+"\"}"), "speaker");
         dIterator.forEachRemaining(d->{
             rSet.add(new Speaker_MongoDB_Impl(this, d));
         });
